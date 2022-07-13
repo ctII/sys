@@ -135,6 +135,7 @@ struct termios2 {
 #include <linux/rtc.h>
 #include <linux/rtnetlink.h>
 #include <linux/shm.h>
+#include <linux/sem.h>
 #include <linux/socket.h>
 #include <linux/stat.h>
 #include <linux/taskstats.h>
@@ -3942,10 +3943,11 @@ const (
 	PIDFD_NONBLOCK = C.O_NONBLOCK
 )
 
-// shm
+// ipc
 
 type SysvIpcPerm C.struct_ipc64_perm
 type SysvShmDesc C.struct_shmid64_ds
+type SysvSemBuf C.struct_sembuf
 
 const (
 	IPC_CREAT   = C.IPC_CREAT
@@ -3965,6 +3967,20 @@ const (
 const (
 	SHM_RDONLY = C.SHM_RDONLY
 	SHM_RND    = C.SHM_RND
+)
+
+const (
+	SEM_UNDO = C.SEM_UNDO
+)
+
+const (
+	GETPID  = C.GETPID
+	GETVAL  = C.GETVAL
+	GETALL  = C.GETALL
+	GETNCNT = C.GETNCNT
+	GETZCNT = C.GETZCNT
+	SETVAL  = C.SETVAL
+	SETALL  = C.SETALL
 )
 
 // mount_setattr

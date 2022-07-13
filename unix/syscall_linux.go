@@ -2322,6 +2322,11 @@ type RemoteIovec struct {
 //sys	shmdt(addr uintptr) (err error)
 //sys	shmget(key int, size int, flag int) (id int, err error)
 
+//sys	semctl(id int, num int, cmd uint, arg int) (result int, err error)
+//sys	semget(key int, nsems int, flag int) (result int, err error)
+//sys	semtimedop(id int, tsops []SysvSemBuf, nsops uint, timeout *Timespec) (result int, err error)
+//sys	semop(id int, tsops []SysvSemBuf, nsops uint) (result int, err error)
+
 //sys	getitimer(which int, currValue *Itimerval) (err error)
 //sys	setitimer(which int, newValue *Itimerval, oldValue *Itimerval) (err error)
 

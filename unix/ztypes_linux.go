@@ -4012,6 +4012,12 @@ const (
 	LANDLOCK_RULE_PATH_BENEATH = 0x1
 )
 
+type SysvSemBuf struct {
+	Num uint16
+	Op  int16
+	Flg int16
+}
+
 const (
 	IPC_CREAT   = 0x200
 	IPC_EXCL    = 0x400
@@ -4030,6 +4036,20 @@ const (
 const (
 	SHM_RDONLY = 0x1000
 	SHM_RND    = 0x2000
+)
+
+const (
+	SEM_UNDO = 0x1000
+)
+
+const (
+	GETPID  = 0xb
+	GETVAL  = 0xc
+	GETALL  = 0xd
+	GETNCNT = 0xe
+	GETZCNT = 0xf
+	SETVAL  = 0x10
+	SETALL  = 0x11
 )
 
 type MountAttr struct {
